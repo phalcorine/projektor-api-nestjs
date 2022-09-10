@@ -1,0 +1,18 @@
+POST http://localhost:3000/api/profile/update-profile HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+
+{
+    "full_name": "Andromadus Naruto"
+}
+
+###
+POST http://localhost:3000/api/profile/update-security-credentials HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+
+{
+    "password": "meowmeow"
+}

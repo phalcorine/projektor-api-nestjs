@@ -1,0 +1,21 @@
+GET http://localhost:3000/api/projects HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+
+### Fetch a single project
+GET http://localhost:3000/api/projects/meow HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+
+
+### Create a project
+POST http://localhost:3000/api/projects HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+
+{
+    "name": ""
+}
