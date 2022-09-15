@@ -38,11 +38,11 @@ export class ProjectTaskResource {
     })
     project_id: number;
 
-    @ApiProperty({
-        description: "This value represents the record of the project the task belongs to...",
-        type: () => ProjectResource,
-    })
-    project?: ProjectResource;
+    // @ApiProperty({
+    //     description: "This value represents the record of the project the task belongs to...",
+    //     type: () => ProjectResource,
+    // })
+    // project?: ProjectResource;
 }
 
 export class CreateProjectTaskDto {
