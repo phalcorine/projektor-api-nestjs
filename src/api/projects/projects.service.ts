@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import { BadRequestException, Injectable, NotFoundException } from "@nestjs/common";
 import { PrismaService } from "src/prisma/prisma.service";
 import { CreateProjectDto, ProjectResource, UpdateProjectDto } from "./projects.model";
 
@@ -74,10 +74,15 @@ export class ProjectsService {
     async delete(cuid: string, creatorId: number): Promise<void> {
         const project = await this.prisma.project.findFirst({
             where: { cuid: cuid, creator_id: creatorId },
+            include: { tasks: true },
         });
 
         if (!project) {
             throw new NotFoundException('Failed to perform operation as a project with the specified ID was not found!');
+        }
+
+        if (project.tasks.length > 0) {
+            throw new BadRequestException('Failed to delete the project as it contains at least one tasks!');
         }
 
         await this.prisma.project.delete({

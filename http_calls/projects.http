@@ -1,21 +1,76 @@
-GET http://localhost:3000/api/projects HTTP/1.1
+GET http://localhost:3333/api/project/projects HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
 
 ### Fetch a single project
-GET http://localhost:3000/api/projects/meow HTTP/1.1
+GET http://localhost:3333/api/project/projects/meow HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
 
 
 ### Create a project
-POST http://localhost:3000/api/projects HTTP/1.1
+POST http://localhost:3333/api/project/projects HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w3dm11b2RmMDAwMjQxaGdqbGZrdzRybSIsImlhdCI6MTY2Mjc5Nzc1OX0.9LoC4Nd7u5SyT2zo9VyRjbTPf_z16SyF3MIQFSN4TZc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
 
 {
-    "name": ""
+    "name": "First Project",
+    "description": "This is my very first project..."
 }
+
+### Update a project
+PATCH http://localhost:3333/api/project/projects/cl82xrfce00303mhgz1qo0hx7 HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
+
+{
+    "name": "First Project (edited)",
+    "description": "This is my very first project..."
+}
+
+### Delete a project
+DELETE http://localhost:3333/api/project/projects/cl82xrfce00303mhgz1qo0hx7 HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
+
+
+### === Tasks ===
+
+### Get Project & Tasks
+GET http://localhost:3333/api/project/projects/cl82xrfce00303mhgz1qo0hx7 HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
+
+### Create Task
+POST http://localhost:3333/api/project/tasks HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
+
+{
+    "name": "Task 1",
+    "project_id": 1
+}
+
+### Update Task
+PATCH http://localhost:3333/api/project/tasks/cl82y6fro00863mhg7igtco4a HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
+
+{
+    "name": "Task 2",
+    "project_id": 1
+}
+
+### Delete Task
+DELETE http://localhost:3333/api/project/tasks/cl82y6fro00863mhg7igtco4a HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdWlkIjoiY2w4MnhtdnM3MDAwODNtaGdqcndzeWxidCIsImlhdCI6MTY2MzIzOTEzNSwiZXhwIjoxNjYzMjQyNzM1fQ.37vqG84giLNlqXSh1wZDor_UrzwL2oTCQa80ZBj_-tg
