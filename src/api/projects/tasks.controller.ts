@@ -1,7 +1,7 @@
 import { Body, Controller, Delete, Param, Patch, Post, UseGuards } from "@nestjs/common";
 import { ApiBearerAuth, ApiBody, ApiCreatedResponse, ApiNoContentResponse, ApiParam, ApiResponse, ApiTags } from "@nestjs/swagger";
 import { JwtAuthGuard } from "../auth/jwt/jwt-auth.guard";
-import { CreateProjectTaskDto, ProjectTaskResource, UpdateProjectTaskDto } from "./projects.model";
+import { CreateProjectTaskDto, ProjectTaskResource, UpdateProjectTaskDto } from "./tasks.model";
 import { TasksService } from "./tasks.service";
 
 @ApiTags('project-tasks')
