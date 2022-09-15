@@ -62,7 +62,8 @@ export class ProjectResource {
     creator?: UserResource;
 
     @ApiProperty({
-        description: "This value represents the tasks under this project..."
+        description: "This value represents the tasks under this project...",
+        type: [ProjectTaskResource],
     })
     tasks?: ProjectTaskResource[];
 

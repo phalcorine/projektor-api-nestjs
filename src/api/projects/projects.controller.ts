@@ -47,7 +47,7 @@ export class ProjectsController {
         name: 'Project ID (cuid)',
     })
     @ApiBody({
-        type: CreateProjectDto,
+        type: UpdateProjectDto,
     })
     @ApiResponse({
         type: ProjectResource,
